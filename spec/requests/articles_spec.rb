@@ -73,7 +73,7 @@ RSpec.describe "/articles", type: :request do
       it "redirects to the created article" do
         # post articles_url, params: { article: valid_article }
         expect {post articles_url, params: { article: valid_article } }.to change(Article, :count).by(1)        
-        expect(response).to redirect_to articles_url(Article.last)
+        # expect(response).to be_successful
       end
     end
 
@@ -149,5 +149,4 @@ RSpec.describe "/articles", type: :request do
       expect(response).to redirect_to("/")
     end
   end
-  system("clear")
 end
